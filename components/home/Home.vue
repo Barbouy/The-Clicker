@@ -1,5 +1,5 @@
 <template>
-  <div class="home min-h-screen flex justify-center items-center bg-stone-800">
+  <div class="home min-h-screen flex justify-center items-center bg-stone-200">
       <HomeHero />
   </div>
 </template>

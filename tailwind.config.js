@@ -8,6 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      "sans": ["Poppins", "sans-serif"]
+    }
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-scoped-groups"),
+  ],
+  variants: {
+    extend: {
+      rotate: ['group-hover']
+    }
+  }
 }
