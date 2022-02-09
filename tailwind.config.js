@@ -13,7 +13,6 @@ module.exports = {
     }
   },
   plugins: [
-    require("tailwindcss-scoped-groups"),
   ],
   variants: {
     extend: {
