@@ -18,5 +18,7 @@ module.exports = {
     extend: {
       rotate: ['group-hover']
     }
-  }
+  },
+  darkMode: 'class',
+  important: true,
 }
