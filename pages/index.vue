@@ -1,16 +1,17 @@
 <template>
-  <div :class="{'dark': isDark}" class="min-h-screen flex flex-col">
-    <div class="min-h-screen transition ease-in-out duration-300 bg-neutral-200 dark:bg-neutral-900 p-5 pb-16 flex text-neutral-800 dark:text-neutral-200">
-      <Home/>
+  <div :class="{'dark': isDark}" class="min-h-screen flex flex-col ">
+    <div class="bg-neutral-300 dark:bg-neutral-900 min-h-screen flex flex-col text-neutral-800 dark:text-neutral-200">
+      <Home />
+      <Footer />
     </div>
-    <ThemeSelector :is-dark.sync="isDark"/>
+    <ThemeSelector :is-dark.sync="isDark" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'IndexPage',
-  data() {
+  data () {
     return {
       isDark: true
     }
