@@ -3,6 +3,47 @@
       "@nuxtjs"
     ],
     "rules": {
-        "vue/multi-word-component-names": "off"
+      // https://eslint.vuejs.org/rules/
+      "vue/multi-word-component-names": "off",
+      "vue/html-indent": ["error", 2],
+      "vue/script-indent": ["error", 2, {
+        "switchCase": 1,
+        "ignores": []
+      }],
+      "vue/html-closing-bracket-newline": ["error", {
+        "singleline": "never",
+        "multiline": "never"
+      }],
+      "vue/max-attributes-per-line": ["error", {
+        "singleline": 1,
+        "multiline": {
+          "max": 1,
+          "allowFirstLine": false
+        }
+      }],
+  
+      // https://eslint.org/docs/rules/
+      "semi": ["error", "never"],
+      "quotes": ["error", "double"],
+      "indent": ["error", 2, { "SwitchCase": 1 }],
+      "space-before-function-paren": ["error", {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }],
+      "object-curly-newline": ["warn", {
+        "multiline": true,
+        "minProperties": 2
+      }],
+      "object-property-newline": ["warn", { "allowAllPropertiesOnSameLine": false }],
+      "object-curly-spacing": ["warn", "always"],
+      "key-spacing": ["warn", {
+        "beforeColon": false,
+        "afterColon": true
+      }],
+      "sort-imports": ["warn", { "ignoreCase": true }],
+  
+      // https://eslint.vuejs.org/rules/no-v-html.html
+      "vue/no-v-html": "off"
     }
   }
