@@ -1,10 +1,10 @@
 <template>
-  <div class="transition ease-in-out duration-300 flex-1 m-5 mb-0 p-5 rounded-md shadow-md flex bg-neutral-50 dark:bg-neutral-800">
+  <div class="transition ease-in-out duration-300 flex-1 m-5 mb-0 p-5 rounded-md shadow-md flex flex-col bg-neutral-100 dark:bg-neutral-800">
     <div class="flex-1 flex items-center justify-center">
       <Clicker :count="pizzaCount" :production="productionPerSecond" @pizza-click="handleClick()" />
     </div>
     <div class="flex-1">
-      <Update @add-update="handleAddUpdate()" />
+      <Update @update-production="handleUpdateProduction" :count="pizzaCount" />
     </div>
   </div>
 </template>
@@ -26,8 +26,9 @@ export default {
     handleClick() {
       this.pizzaCount ++
     },
-    handleAddUpdate() {
-      this.productionPerSecond ++
+    handleUpdateProduction(update) {
+      this.pizzaCount = this.pizzaCount - update.cost
+      this.productionPerSecond = this.productionPerSecond + update.production
     },
     setProduction() {
       if (this.productionPerSecond) {

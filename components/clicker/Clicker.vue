@@ -9,12 +9,14 @@
         @mouseleave="isHover = false"
       >
     </div>
-    <span class="w-full text-center font-bold">{{ count }}</span>
-    <span class="text-center text-sm inline"><strong>{{ production }}</strong> par secondes</span>
+    <span class="w-full text-center font-bold ">{{ count }}</span>
+    <span class="text-center text-sm inline"><strong>{{ activeProduction }}</strong> /s</span>
   </div>
 </template>
 
 <script>
+import PizzCoinLogo from "@/assets/img/pizzcoin.png"
+
 export default {
   name: 'Clicker',
   data () {
@@ -23,6 +25,7 @@ export default {
       isHover: false
     }
   },
+  components: { PizzCoinLogo },
   props: {
     count: {
       type: Number,
@@ -31,6 +34,11 @@ export default {
     production: {
       type: Number,
       required: true
+    }
+  },
+  computed: {
+    activeProduction() {
+      return this.production.toFixed(1)
     }
   },
   methods: {
